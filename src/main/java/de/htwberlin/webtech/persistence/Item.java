@@ -12,12 +12,12 @@ public class Item {
     private String category;
     private int quantity;
     private boolean purchased;
-    private double price;
+    private Double price;
 
     public Item() {
     }
 
-    public Item(String name, String category, int quantity, boolean purchased, double price) {
+    public Item(String name, String category, int quantity, boolean purchased, Double price) {
         this.name = name;
         this.category = category;
         this.quantity = quantity;
@@ -31,14 +31,14 @@ public class Item {
     public String getCategory() { return category; }
     public int getQuantity() { return quantity; }
     public boolean isPurchased() { return purchased; }
-    public double getPrice() {return price; }
+    public Double getPrice() {return price; }
 
     public void setId(Long id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setCategory(String category) { this.category = category; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public void setPurchased(boolean purchased) { this.purchased = purchased; }
-    public void setPrice(double price) {this.price = price; }
+    public void setPrice(Double price) {this.price = price; }
 
 
     @ManyToOne
