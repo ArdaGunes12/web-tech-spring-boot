@@ -1,5 +1,6 @@
 package de.htwberlin.webtech.persistence;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -41,6 +42,7 @@ public class Item {
     public void setPrice(Double price) {this.price = price; }
 
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "shopping_list_id")
     private ShoppingList shoppingList;
