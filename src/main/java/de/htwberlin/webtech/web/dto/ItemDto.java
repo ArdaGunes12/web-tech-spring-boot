@@ -60,7 +60,7 @@ public class ItemDto {
                 item.getCategory(),
                 item.getQuantity(),
                 item.isPurchased(),
-                item.getPrice(),
+                item.getPrice() != null ? item.getPrice() : 0.0,
                 item.getShoppingList() != null ? item.getShoppingList().getId() : null
         );
     }
