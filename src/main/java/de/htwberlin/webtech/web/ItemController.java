@@ -53,7 +53,8 @@ public class ItemController {
                 itemDto.isPurchased(),
                 itemDto.getPrice()
         );
-
+        item.setShoppingList(list);
+        
         return ItemDto.fromEntity(itemRepository.save(item));
     }
 
