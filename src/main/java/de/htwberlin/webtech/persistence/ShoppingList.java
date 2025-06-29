@@ -13,7 +13,7 @@ public class ShoppingList {
     private String name;
     private LocalDate plannedDate;
 
-    @OneToMany(mappedBy = "shoppingList", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "shoppingList", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items;
 
     // Getter & Setter

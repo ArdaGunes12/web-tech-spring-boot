@@ -5,6 +5,8 @@ import de.htwberlin.webtech.persistence.ShoppingListRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.ResponseEntity;
+
 
 import java.util.List;
 
@@ -32,4 +34,14 @@ public class ShoppingListController {
     public ShoppingList getById(@PathVariable Long id) {
         return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteList(@PathVariable Long id) {
+        if (!repository.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
